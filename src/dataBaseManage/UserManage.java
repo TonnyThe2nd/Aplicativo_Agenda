@@ -66,11 +66,13 @@ public class UserManage{
     
     //agendamento de horário
     public void agendarHorario(String date, String horario, String user)throws SQLException{
+        //script para localizar id do usuario
         PreparedStatement psUser = connection.prepareStatement("select * from usuario where nome = '"+user+"';");
         psUser.execute();
         ResultSet rs = psUser.getResultSet();
         rs.next();
         String idUser = rs.getString("id");
+        //script para localizar agenda do usuario a partir do id
         PreparedStatement psCheck = connection.prepareStatement("select * from horarios where data = '"
                 +date+"' and horario = '"+horario+"';");
         psCheck.execute();
