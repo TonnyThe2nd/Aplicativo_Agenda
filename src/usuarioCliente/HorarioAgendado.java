@@ -8,6 +8,13 @@ import java.sql.ResultSet;
 
 public class HorarioAgendado extends javax.swing.JFrame {
 
+    private javax.swing.JLabel DataDBLBL;
+    private javax.swing.JLabel DataLBL;
+    private javax.swing.JLabel HOrarioDBLBL;
+    private javax.swing.JLabel HorarioLBL;
+    private javax.swing.JLabel Imagem;
+    private javax.swing.JLabel TextLB1;
+    private javax.swing.JButton VoltarBTTN;
     private String username;
             
     public HorarioAgendado() {
@@ -19,7 +26,6 @@ public class HorarioAgendado extends javax.swing.JFrame {
         setHorario();
         setVisible(true);
     }
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         TextLB1 = new javax.swing.JLabel();
@@ -33,47 +39,43 @@ public class HorarioAgendado extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        TextLB1.setFont(new java.awt.Font("Segoe UI Historic", 3, 24)); // NOI18N
+        TextLB1.setFont(new java.awt.Font("Segoe UI Historic", 3, 24));
         TextLB1.setForeground(new java.awt.Color(0, 0, 0));
         TextLB1.setText("Horário agendado:");
         getContentPane().add(TextLB1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 30, 220, -1));
 
-        HOrarioDBLBL.setFont(new java.awt.Font("Segoe UI Historic", 3, 24)); // NOI18N
+        HOrarioDBLBL.setFont(new java.awt.Font("Segoe UI Historic", 3, 24));
         HOrarioDBLBL.setForeground(new java.awt.Color(0, 0, 0));
         getContentPane().add(HOrarioDBLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 110, 320, 100));
 
-        DataDBLBL.setFont(new java.awt.Font("Segoe UI Historic", 3, 24)); // NOI18N
+        DataDBLBL.setFont(new java.awt.Font("Segoe UI Historic", 3, 24)); 
         DataDBLBL.setForeground(new java.awt.Color(0, 0, 0));
         getContentPane().add(DataDBLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 70, 210, 80));
 
-        DataLBL.setFont(new java.awt.Font("Segoe UI Historic", 3, 24)); // NOI18N
+        DataLBL.setFont(new java.awt.Font("Segoe UI Historic", 3, 24));
         DataLBL.setForeground(new java.awt.Color(0, 0, 0));
         DataLBL.setText("Data:");
         getContentPane().add(DataLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, 460, 60));
 
-        HorarioLBL.setFont(new java.awt.Font("Segoe UI Historic", 3, 24)); // NOI18N
+        HorarioLBL.setFont(new java.awt.Font("Segoe UI Historic", 3, 24));
         HorarioLBL.setForeground(new java.awt.Color(0, 0, 0));
         HorarioLBL.setText("Horário:");
         getContentPane().add(HorarioLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, 100, -1));
 
-        VoltarBTTN.setFont(new java.awt.Font("Segoe UI Black", 3, 14)); // NOI18N
+        VoltarBTTN.setFont(new java.awt.Font("Segoe UI Black", 3, 14));
         VoltarBTTN.setText("VOLTAR");
-        VoltarBTTN.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                VoltarBTTNActionPerformed(evt);
-            }
-        });
+        VoltarBTTN.addActionListener(evt -> VoltarBTTNActionPerformed());
         getContentPane().add(VoltarBTTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 290, 130, 40));
 
         Imagem.setIcon(new javax.swing.ImageIcon("C:\\Users\\Gamer\\Downloads\\UserWLPP.jpg")); // NOI18N
         getContentPane().add(Imagem, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
+    }
 
-    private void VoltarBTTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VoltarBTTNActionPerformed
+    private void VoltarBTTNActionPerformed() {
         setVisible(false);
-    }//GEN-LAST:event_VoltarBTTNActionPerformed
+    }
     //alterar texto para horario agendado
     private void setHorario() throws SQLException{
         Connection conexao = new ConexaoBancoDeDados().getConnection();
@@ -111,13 +113,4 @@ public class HorarioAgendado extends javax.swing.JFrame {
             }
         });
     }
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel DataDBLBL;
-    private javax.swing.JLabel DataLBL;
-    private javax.swing.JLabel HOrarioDBLBL;
-    private javax.swing.JLabel HorarioLBL;
-    private javax.swing.JLabel Imagem;
-    private javax.swing.JLabel TextLB1;
-    private javax.swing.JButton VoltarBTTN;
-    // End of variables declaration//GEN-END:variables
 }
