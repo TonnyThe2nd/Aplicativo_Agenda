@@ -8,11 +8,20 @@ import java.util.logging.Logger;
 import mainFrame.RecuperarSenha.SenhaRec;
 
 public class LoginUsuario extends javax.swing.JFrame{
+
+    private javax.swing.JButton CadastroBttn;
+    private javax.swing.JLabel Imagem;
+    private javax.swing.JButton LoginBttn;
+    private javax.swing.JPasswordField SenhaTF;
+    private javax.swing.JTextField UserTF;
+    private javax.swing.JLabel avisoLBL;
+    private javax.swing.JButton recuperarSenhaBTTN;
+    private javax.swing.JLabel senhaLBL;
+    private javax.swing.JLabel userLBL;
     
     public LoginUsuario() {
         initComponents();
     }
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         senhaLBL = new javax.swing.JLabel();
@@ -46,20 +55,12 @@ public class LoginUsuario extends javax.swing.JFrame{
 
         recuperarSenhaBTTN.setFont(new java.awt.Font("Segoe UI Black", 1, 10)); // NOI18N
         recuperarSenhaBTTN.setText("Esqueci a senha");
-        recuperarSenhaBTTN.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                recuperarSenhaBTTNActionPerformed(evt);
-            }
-        });
+        recuperarSenhaBTTN.addActionListener(evt -> recuperarSenhaBTTNActionPerformed());
         getContentPane().add(recuperarSenhaBTTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 310, 120, -1));
 
         LoginBttn.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
         LoginBttn.setText("Entrar");
-        LoginBttn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LoginBttnActionPerformed(evt);
-            }
-        });
+        LoginBttn.addActionListener(evt -> LoginBttnActionPerformed());
         getContentPane().add(LoginBttn, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 180, 110, -1));
 
         SenhaTF.setBackground(new java.awt.Color(255, 255, 255));
@@ -68,30 +69,26 @@ public class LoginUsuario extends javax.swing.JFrame{
 
         CadastroBttn.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
         CadastroBttn.setText("Cadastre-se");
-        CadastroBttn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CadastroBttnActionPerformed(evt);
-            }
-        });
+        CadastroBttn.addActionListener(evt -> CadastroBttnActionPerformed();
         getContentPane().add(CadastroBttn, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 210, 110, -1));
 
         avisoLBL.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         avisoLBL.setForeground(new java.awt.Color(255, 0, 0));
         getContentPane().add(avisoLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 260, 130, 30));
 
-        Imagem.setIcon(new javax.swing.ImageIcon("C:\\Users\\Gamer\\Downloads\\Opera Instantâneo_2024-03-22_113429_www.freepik.com.png")); // NOI18N
+        Imagem.setIcon(new javax.swing.ImageIcon("C:\\Users\\Gamer\\Downloads\\Opera Instantâneo_2024-03-22_113429_www.freepik.com.png"));
         Imagem.setText("jLabel1");
         getContentPane().add(Imagem, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 490, 370));
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
+    }
     //botão para recuperar a senha
-    private void recuperarSenhaBTTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recuperarSenhaBTTNActionPerformed
+    private void recuperarSenhaBTTNActionPerformed() {
             SenhaRec sr = new SenhaRec();
             sr.setVisible(true);
     }//GEN-LAST:event_recuperarSenhaBTTNActionPerformed
     //botão de login
-    private void LoginBttnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginBttnActionPerformed
+    private void LoginBttnActionPerformed() {
         try {
             //acessando conta
             Connection conexao = new ConexaoBancoDeDados().getConnection();
@@ -108,9 +105,9 @@ public class LoginUsuario extends javax.swing.JFrame{
         } catch (SQLException ex) {
             Logger.getLogger(LoginUsuario.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_LoginBttnActionPerformed
+    }
     //botão de cadastrar
-    private void CadastroBttnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastroBttnActionPerformed
+    private void CadastroBttnActionPerformed() {
         CadastroFrame cf = new CadastroFrame();
         cf.setVisible(true);
         setVisible(false);
@@ -126,16 +123,4 @@ public class LoginUsuario extends javax.swing.JFrame{
     public void setAviso(String text){
         avisoLBL.setText("Usuário inválido/Não existe!");
     }
-
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton CadastroBttn;
-    private javax.swing.JLabel Imagem;
-    private javax.swing.JButton LoginBttn;
-    private javax.swing.JPasswordField SenhaTF;
-    private javax.swing.JTextField UserTF;
-    private javax.swing.JLabel avisoLBL;
-    private javax.swing.JButton recuperarSenhaBTTN;
-    private javax.swing.JLabel senhaLBL;
-    private javax.swing.JLabel userLBL;
-    // End of variables declaration//GEN-END:variables
 }
