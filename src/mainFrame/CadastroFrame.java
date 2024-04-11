@@ -200,6 +200,9 @@ public class CadastroFrame extends javax.swing.JFrame {
                 CelularUMTF.getText().isEmpty() || cepTF.getText().isEmpty() || LogradouroTF.getText().isEmpty()){
                 AvisosLBL.setText("Cadastro incompleto!");
             }
+            else if(!emailTF.getText().contains("@gmail")||!emailTF.getText().contains("@yahoo")|| !emailTF.getText().contains("@hotmail")){
+                AvisosLBL.setText("Email inválido!");
+            }
             else{
                 UserManage us = new UserManage(conexao);
                 us.insertNewUser(nomeCTF.getText(), convert, emailTF.getText(), CelularUMTF.getText(), 
