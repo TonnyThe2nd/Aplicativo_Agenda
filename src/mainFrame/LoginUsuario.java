@@ -2,7 +2,8 @@ package mainFrame;
 
 import conexaoBancos.ConexaoBancoDeDados;
 import dataBaseManage.UserManage;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import mainFrame.RecuperarSenha.SenhaRec;
@@ -86,7 +87,7 @@ public class LoginUsuario extends javax.swing.JFrame{
     private void recuperarSenhaBTTNActionPerformed() {
             SenhaRec sr = new SenhaRec();
             sr.setVisible(true);
-    }//GEN-LAST:event_recuperarSenhaBTTNActionPerformed
+    }
     //botão de login
     private void LoginBttnActionPerformed() {
         try {
@@ -111,7 +112,7 @@ public class LoginUsuario extends javax.swing.JFrame{
         CadastroFrame cf = new CadastroFrame();
         cf.setVisible(true);
         setVisible(false);
-    }//GEN-LAST:event_CadastroBttnActionPerformed
+    }
 
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
